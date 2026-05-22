@@ -1,0 +1,47 @@
+ body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+  }
+
+  .parent {
+    background-color: rgb(62, 49, 49);
+    width: 100px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Base circle styles with animation attached */
+  .child1, .child2, .child3 {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    animation: blink 3s infinite; /* 3 seconds total loop, runs forever */
+  }
+
+  /* Colors and specific timing delays */
+  .child1 { 
+    background-color: rgb(238, 10, 10); 
+    animation-delay: 0s; /* Blinks first */
+  }
+  .child2 { 
+    background-color: rgb(233, 229, 27); 
+    animation-delay: 1s; /* Blinks second */
+  }
+  .child3 { 
+    background-color: rgb(68, 245, 9); 
+    animation-delay: 2s; /* Blinks third */
+  }
+
+  /* The Blinking Effect */
+  @keyframes blink {
+    0%, 33% { opacity: 1; }     /* Light is ON */
+    34%, 100% { opacity: 0.2; } /* Light is OFF (dimmed) */
+  }

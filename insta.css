@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(245,245,245);
+    font-family: sans-serif;
+}
+
+.wrapper{
+    display: flex;
+}
+
+/* LEFT SIDEBAR */
+
+.sidebar{
+    width: 20%;
+    height: 100vh;
+    border-right: 1px solid grey;
+    padding: 20px;
+}
+
+.logo{
+    height: 50px;
+    width: 150px;
+    background-color: pink;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.menu{
+    height: 45px;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* MAIN SECTION */
+
+.main_content{
+    width: 55%;
+    padding: 20px;
+}
+
+/* STORIES */
+
+.stories_section{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.story{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid hotpink;
+}
+
+/* POSTS */
+
+.post{
+    width: 100%;
+    height: 500px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+/* RIGHT SIDEBAR */
+
+.right_sidebar{
+    width: 25%;
+    padding: 20px;
+}
+
+.profile_box{
+    width: 100%;
+    height: 70px;
+    border: 1px solid grey;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.suggestion{
+    width: 100%;
+    height: 60px;
+    border: 1px solid grey;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}

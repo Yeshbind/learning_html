@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout Design</title>
+
+  <style>
+    :root {
+      --bg-color: #f2f2f2;
+      --container-bg: #ffffff;
+      --border-color: #222;
+      --border-size: 2px;
+      --container-width: 1100px;
+      --container-padding: 40px;
+      --header-height: 140px;
+      --box-height: 120px;
+      --box-width: 220px;
+      --large-box-width: 660px;
+      --large-box-height: 160px;
+      --circle-size: 140px;
+      --gap: 40px;
+      --radius: 4px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-color);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: var(--container-width);
+      border: var(--border-size) solid var(--border-color);
+      padding: var(--container-padding);
+      background: var(--container-bg);
+    }
+
+    .top-box {
+      width: 100%;
+      height: var(--header-height);
+      border: var(--border-size) solid var(--border-color);
+      border-radius: var(--radius);
+      margin-bottom: var(--gap);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--gap);
+    }
+
+    .small-box {
+      width: var(--box-width);
+      height: var(--box-height);
+      border: var(--border-size) solid var(--border-color);
+      border-radius: var(--radius);
+    }
+
+    .bottom-section {
+      display: flex;
+      align-items: center;
+      gap: var(--gap);
+    }
+
+    .circle {
+      width: var(--circle-size);
+      height: var(--circle-size);
+      border: var(--border-size) solid var(--border-color);
+      border-radius: 50%;
+    }
+
+    .large-box {
+      width: var(--large-box-width);
+      height: var(--large-box-height);
+      border: var(--border-size) solid var(--border-color);
+      border-radius: var(--radius);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="top-box"></div>
+
+    <div class="row">
+      <div class="small-box"></div>
+      <div class="small-box"></div>
+      <div class="small-box"></div>
+    </div>
+
+    <div class="bottom-section">
+      <div class="circle"></div>
+      <div class="large-box"></div>
+    </div>
+  </div>
+
+</body>
+</html>

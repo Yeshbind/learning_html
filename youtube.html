@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone Layout</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0f0f0f;
+            overflow: hidden;
+        }
+
+        /* NAVBAR */
+
+        .navbar{
+            height: 70px;
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 20px;
+
+            background-color: #0f0f0f;
+            border-bottom: 1px solid #2a2a2a;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* LEFT NAV */
+
+        .nav_left{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu_icon{
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            border: 1px solid #3a3a3a;
+        }
+
+        .youtube_logo{
+            width: 120px;
+            height: 30px;
+
+            background-color: red;
+            border-radius: 10px;
+        }
+
+        /* CENTER NAV */
+
+        .nav_center{
+            display: flex;
+            align-items: center;
+        }
+
+        .search_bar{
+            width: 500px;
+            height: 42px;
+
+            border: 1px solid #3a3a3a;
+            border-radius: 25px 0 0 25px;
+
+            background-color: #121212;
+        }
+
+        .search_button{
+            width: 70px;
+            height: 42px;
+
+            border: 1px solid #3a3a3a;
+            border-left: none;
+
+            border-radius: 0 25px 25px 0;
+
+            background-color: #222222;
+        }
+
+        .mic{
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            border: 1px solid #3a3a3a;
+
+            margin-left: 15px;
+        }
+
+        /* RIGHT NAV */
+
+        .nav_right{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .create{
+            width: 90px;
+            height: 40px;
+
+            border-radius: 20px;
+            border: 1px solid #3a3a3a;
+        }
+
+        .notification{
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            border: 1px solid #3a3a3a;
+        }
+
+        .profile{
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            background-color: purple;
+        }
+
+        /* MAIN CONTAINER */
+
+        .main_container{
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+
+        /* SIDEBAR */
+
+        .sidebar{
+            width: 15%;
+            background-color: #0f0f0f;
+
+            padding: 15px;
+
+            overflow-y: auto;
+
+            border-right: 1px solid #2a2a2a;
+        }
+
+        .sidebar_item{
+            width: 100%;
+            height: 45px;
+
+            border-radius: 12px;
+            border: 1px solid #2f2f2f;
+
+            margin-bottom: 12px;
+        }
+
+        /* CONTENT */
+
+        .content{
+            width: 85%;
+
+            padding: 20px;
+
+            overflow-y: auto;
+        }
+
+        /* CATEGORY BAR */
+
+        .category_bar{
+            display: flex;
+            gap: 12px;
+
+            margin-bottom: 30px;
+
+            position: sticky;
+            top: 0;
+
+            background-color: #0f0f0f;
+
+            padding-bottom: 15px;
+            z-index: 50;
+        }
+
+        .category{
+            min-width: 90px;
+            height: 35px;
+
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+
+            background-color: #222222;
+        }
+
+        /* VIDEO GRID */
+
+        .video_grid{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        /* VIDEO CARD */
+
+        .video_card{
+            width: 360px;
+        }
+
+        /* THUMBNAIL */
+
+        .thumbnail{
+            width: 100%;
+            height: 210px;
+
+            border-radius: 15px;
+
+            background-color: #2a2a2a;
+
+            margin-bottom: 12px;
+        }
+
+        /* VIDEO INFO */
+
+        .video_info{
+            display: flex;
+            gap: 12px;
+        }
+
+        .channel_logo{
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            background-color: grey;
+        }
+
+        .video_text{
+            flex: 1;
+        }
+
+        .video_title{
+            width: 100%;
+            height: 18px;
+
+            border-radius: 5px;
+
+            background-color: #d9d9d9;
+
+            margin-bottom: 10px;
+        }
+
+        .channel_name{
+            width: 60%;
+            height: 14px;
+
+            border-radius: 5px;
+
+            background-color: #8a8a8a;
+
+            margin-bottom: 8px;
+        }
+
+        .video_stats{
+            width: 40%;
+            height: 14px;
+
+            border-radius: 5px;
+
+            background-color: #5a5a5a;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="nav_left">
+
+            <div class="menu_icon"></div>
+            <div class="youtube_logo"></div>
+
+        </div>
+
+        <div class="nav_center">
+
+            <div class="search_bar"></div>
+            <div class="search_button"></div>
+            <div class="mic"></div>
+
+        </div>
+
+        <div class="nav_right">
+
+            <div class="create"></div>
+            <div class="notification"></div>
+            <div class="profile"></div>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="main_container">
+
+        <!-- SIDEBAR -->
+
+        <div class="sidebar">
+
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+            <div class="sidebar_item"></div>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+            <!-- CATEGORY -->
+
+            <div class="category_bar">
+
+                <div class="category"></div>
+                <div class="category"></div>
+                <div class="category"></div>
+                <div class="category"></div>
+                <div class="category"></div>
+                <div class="category"></div>
+                <div class="category"></div>
+                <div class="category"></div>
+
+            </div>
+
+            <!-- VIDEOS -->
+
+            <div class="video_grid">
+
+                <!-- VIDEO CARD -->
+
+                <div class="video_card">
+
+                    <div class="thumbnail"></div>
+
+                    <div class="video_info">
+
+                        <div class="channel_logo"></div>
+
+                        <div class="video_text">
+
+                            <div class="video_title"></div>
+                            <div class="channel_name"></div>
+                            <div class="video_stats"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- COPY MANY TIMES -->
+
+                <div class="video_card">
+                    <div class="thumbnail"></div>
+
+                    <div class="video_info">
+
+                        <div class="channel_logo"></div>
+
+                        <div class="video_text">
+
+                            <div class="video_title"></div>
+                            <div class="channel_name"></div>
+                            <div class="video_stats"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="video_card">
+                    <div class="thumbnail"></div>
+
+                    <div class="video_info">
+
+                        <div class="channel_logo"></div>
+
+                        <div class="video_text">
+
+                            <div class="video_title"></div>
+                            <div class="channel_name"></div>
+                            <div class="video_stats"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="video_card">
+                    <div class="thumbnail"></div>
+
+                    <div class="video_info">
+
+                        <div class="channel_logo"></div>
+
+                        <div class="video_text">
+
+                            <div class="video_title"></div>
+                            <div class="channel_name"></div>
+                            <div class="video_stats"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="video_card">
+                    <div class="thumbnail"></div>
+
+                    <div class="video_info">
+
+                        <div class="channel_logo"></div>
+
+                        <div class="video_text">
+
+                            <div class="video_title"></div>
+                            <div class="channel_name"></div>
+                            <div class="video_stats"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="video_card">
+                    <div class="thumbnail"></div>
+
+                    <div class="video_info">
+
+                        <div class="channel_logo"></div>
+
+                        <div class="video_text">
+
+                            <div class="video_title"></div>
+                            <div class="channel_name"></div>
+                            <div class="video_stats"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="video_card">
+                    <div class="thumbnail"></div>
+
+                    <div class="video_info">
+
+                        <div class="channel_logo"></div>
+
+                        <div class="video_text">
+
+                            <div class="video_title"></div>
+                            <div class="channel_name"></div>
+                            <div class="video_stats"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="video_card">
+                    <div class="thumbnail"></div>
+
+                    <div class="video_info">
+
+                        <div class="channel_logo"></div>
+
+                        <div class="video_text">
+
+                            <div class="video_title"></div>
+                            <div class="channel_name"></div>
+                            <div class="video_stats"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

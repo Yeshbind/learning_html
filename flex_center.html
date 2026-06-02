@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .flexcontainer{
+        height: 500px;
+        width: 500px;
+        background-color: bisque;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flexitem1,.flexitem2,.flexitem3{
+        height: 50px;
+        width: 50px;
+        background-color: brown;
+
+    }
+    .flexitem1{
+        align-self: flex-start;
+    }
+    .flexitem2{
+        align-self: center;
+    }
+    .flexitem3{
+        align-self: flex-end;
+    }
+</style>
+<body>
+
+    <div class="flexcontainer">
+        <div class="flexitem1"></div>
+         <div class="flexitem2"></div>
+          <div class="flexitem3"></div>
+
+    </div>
+    
+</body>
+</html>
